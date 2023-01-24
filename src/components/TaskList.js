@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { updateTaskState } from "../lib/store"
 import Task from "./Task"
 
-export default function TaskList({ loading, onPinTask, onArchiveTask }) {
+export default function TaskList() {
   // We're retrieving our state from the store
   const tasks = useSelector((state) => {
     const tasksInOrder = [
@@ -38,7 +38,7 @@ export default function TaskList({ loading, onPinTask, onArchiveTask }) {
     </div>
   )
 
-  if (loading) {
+  if (status === 'loading') {
     return (
       <div className="list-items" data-testid="loading" key={"loading"}>
         {LoadingRow}
