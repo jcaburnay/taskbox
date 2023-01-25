@@ -38,7 +38,7 @@ Default.parameters = {
 Default.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement)
   // Waits for the component to transition from the loading state
-  await waitForElementToBeRemoved(await canvas.findByTestId("empty"))
+  await waitForElementToBeRemoved(await canvas.findByTestId("loading"))
   // Waits for the component to be updated based on the store
   await waitFor(async () => {
     // Simulates pinning the first task
